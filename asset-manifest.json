@@ -1,12 +1,25 @@
 {
   "files": {
-    "main.css": "/Shop/static/css/main.31d6cfe0.css",
-    "main.js": "/Shop/static/js/main.6215c03b.js",
+    "main.css": "/Shop/static/css/main.927c36b4.css",
+    "main.js": "/Shop/static/js/main.c7b7de5a.js",
+    "static/media/poppins-devanagari-400-normal.woff": "/Shop/static/media/poppins-devanagari-400-normal.421fe9869ff4b58e2d7b.woff",
+    "static/media/poppins-devanagari-700-normal.woff": "/Shop/static/media/poppins-devanagari-700-normal.de46590351f7df77172f.woff",
+    "static/media/poppins-devanagari-400-normal.woff2": "/Shop/static/media/poppins-devanagari-400-normal.d2ee5e6ea17bffe3bf58.woff2",
+    "static/media/poppins-devanagari-700-normal.woff2": "/Shop/static/media/poppins-devanagari-700-normal.305c44fc8fa866291876.woff2",
+    "static/media/poppins-latin-400-normal.woff": "/Shop/static/media/poppins-latin-400-normal.1458587c0aa7cd06b82b.woff",
+    "static/media/poppins-latin-700-normal.woff": "/Shop/static/media/poppins-latin-700-normal.cd04c2ad00870c9ceebf.woff",
+    "static/media/poppins-latin-400-normal.woff2": "/Shop/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/poppins-latin-700-normal.woff2": "/Shop/static/media/poppins-latin-700-normal.d86662fe776dae29ea78.woff2",
+    "static/media/poppins-latin-ext-400-normal.woff": "/Shop/static/media/poppins-latin-ext-400-normal.7e12786771ac4a8e6a5c.woff",
+    "static/media/poppins-latin-ext-700-normal.woff": "/Shop/static/media/poppins-latin-ext-700-normal.0891add22376e17f583d.woff",
+    "static/media/poppins-latin-ext-400-normal.woff2": "/Shop/static/media/poppins-latin-ext-400-normal.d7c074a9c34fe9785f69.woff2",
+    "static/media/poppins-latin-ext-700-normal.woff2": "/Shop/static/media/poppins-latin-ext-700-normal.51cc1e159ae5f0b8ec5c.woff2",
     "index.html": "/Shop/index.html",
-    "main.6215c03b.js.map": "/Shop/static/js/main.6215c03b.js.map"
+    "main.927c36b4.css.map": "/Shop/static/css/main.927c36b4.css.map",
+    "main.c7b7de5a.js.map": "/Shop/static/js/main.c7b7de5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.6215c03b.js"
+    "static/css/main.927c36b4.css",
+    "static/js/main.c7b7de5a.js"
   ]
 }
