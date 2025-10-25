@@ -1,10 +1,22 @@
-import './App.css';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+
+import './App.scss';
+
+// import pages
+import SingUp from "./pages/Login/SingUp/SingUp";
+import SingIn from "./pages/Login/SingIn/SingIn";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <Router>
+      <main>
+          <Routes>
+            <Route path="/SingUp" element={<SingUp/>}/>
+            <Route path="/" element={<SingIn/>}/>
+          </Routes>
+      </main>
+    </Router>
   );
 }
 
