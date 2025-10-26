@@ -1,0 +1,352 @@
+
+
+.Header_Wrapper{
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+
+    .Heade_BurgerMenu{
+        display: none;
+        width: 17px;
+        height: 2px;
+        background-color: black;
+
+        position: relative;
+
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            width: 17px;
+            height: 2px;
+            background-color: black;
+        }
+
+        &::before{
+            top: 7px;
+        }
+
+        &::after{
+            bottom: 7px;
+        }
+    }
+
+    .Header_logo{
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+
+    .Header_Navigtion-Container{
+        height: 24px;
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+
+        li{
+            width: 38;
+            height: 24;
+            gap: 2px;
+            opacity: 1;
+
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            transition: all .3s ease;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.1);
+                opacity: .8;
+            }
+
+            &:active{
+                transform: scale(1);
+                opacity:1;
+            }
+        }
+    }
+
+
+
+    .Header_Others-Navigation{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header_Input {
+        width: 30px; 
+        height: 40px;
+        border-radius: 6px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 0 5px;
+        transition: all 0.4s ease;
+        overflow: hidden;
+
+        .Header_SearchBTN{ 
+            width: 24px; 
+            height: 24px; 
+            border: 1.5px solid black; 
+            border-radius: 50%; 
+            cursor: pointer; 
+            position: relative; 
+            background-color: transparent; 
+            
+            &::after{ 
+                content: ''; 
+                position: absolute; 
+                width: 8px; 
+                height: 1.5px; 
+                background-color: black; 
+                transform: rotate(45deg); 
+                bottom: 0; 
+                right: -5px; 
+            } 
+        }
+
+        .Header_SearchInput {
+            width: 0;
+            opacity: 0;
+            transition: all 0.4s ease;
+
+            input {
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 14px;
+            }
+        }
+
+        &.active {
+            width: 180px; // ширина при открытии
+            padding: 0 10px;
+
+            .Header_SearchInput {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+
+
+    .Header_User-Accaunt{
+        width: 24px;
+        height: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        border: 1px solid black;
+        overflow: hidden;
+
+        cursor: pointer;
+        transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(1);
+        }
+
+        .Header_Head{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-top: -7px;
+        }
+
+        .Header_Body{
+            width: 12px;
+            height: 10px;
+            border: 1px solid black;
+
+            border-radius: 10px 10px 0px 0px;
+            margin-bottom: -15px;
+        }
+    }
+
+    .Header_Cart{
+        width: 50px;
+        height: 28px;
+        transition: all .3s ease;
+        cursor: pointer;
+
+        &:hover{
+            opacity: .8;
+            transform: scale(1.1);
+        }
+        &:active{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+}
+
+@media (max-width: 450px) {
+    .Header_Wrapper{
+        padding: 0 5%;
+
+        .Header_LogoContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .Heade_BurgerMenu {
+            display: block;
+        }
+
+        .Header_logo{
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: center;
+        }
+
+            .header_Input{
+                width: 90%;
+                height: 46px;           
+                border: 1px solid black;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 0 20px;
+
+                .Header_SearchBTN{
+                    width: 24px;
+                    height: 24px;
+                    border: 1.5px solid black;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: relative;
+
+                    background-color: transparent;
+                    &::after{
+                        content: '';
+                        position: absolute;
+
+                        width: 8px;
+                        height: 1.5px;
+                        background-color: black;
+
+                        transform: rotate(45deg);
+                        bottom: 0;
+                        right: -5px;
+                    }
+                }
+                
+                .Header_SearchInput{
+                    width: 100%;
+                    height: 24px;
+
+                    input{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 5px;
+                        border: none;
+
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+
+                        &:focus{
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+        .Header_Navigtion-Container {
+            flex-direction: column;
+   
+            position: absolute;
+            top: 0;
+            left: -100%;
+            background-color: white;
+
+            width: 100%;
+            height: 100vh;
+
+            transition: all 1s ease;
+
+            
+            .Header_LogoContainer-menu{
+                width: 100%;
+                height: 24px;
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                padding: 0 10px;
+
+                .Heade_BurgerMenu-active{
+                    width: 19px;
+                    height: 2px;
+                    background-color: black;
+                    position: relative;
+                    transform: rotate(45deg);
+                    transition: all 0.3s ease;
+
+                  &::after{
+                        content: '';
+                        position: absolute;
+                        width: 19px;
+                        height: 2px;
+                        background-color: black;
+                        transform: rotate(90deg);
+                    }
+
+                    &:active{
+                        transform: scale(.8);
+                    }
+                }
+            }
+
+            li{
+                width: 90%;
+                height: 40px;
+
+                padding-bottom: 8px;
+                border-bottom: 1px solid #E8ECEF;
+ 
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0px;
+
+            }
+        }
+
+        .Header_Cart{
+            width:24px;
+            height: 24px;
+        }
+    }
+}

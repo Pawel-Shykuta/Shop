@@ -13,9 +13,7 @@ const SingIn = () =>{
 
    const [userValue, setUserValue] = useState({
     name: '',
-    userName: '',
-    email: '',
-    password: '',
+    password: ''
   });
 
   const inputValue = (e) => {
@@ -26,7 +24,10 @@ const SingIn = () =>{
   };
 
   const SendInfo = () =>{
-    if(userValue.name.trim() !== '' || userValue.userName.trim() !== '' || userValue.email.trim() !== ''|| userValue.password.trim() !== '' )
+    if(userValue.name.trim() !== '' || userValue.password.trim() !== '' ){
+        alert('Please fill in all fields!')
+        return
+    }
 
 
     setUserValue({
@@ -47,7 +48,7 @@ const SingIn = () =>{
 
             <div className={Styles['SingIn_Form-text']}>
                 <h1>Sign In</h1>
-                <p>Don’t have an accout yet? <span onClick={() => navigat('/SingUp')}>Sign Up</span></p>
+                <p>Don’t have an accout yet? <span onClick={() => navigat('/SingUp')}> Sign Up</span></p>
             </div>
 
             <div className={Styles['SingIn_Form']}>

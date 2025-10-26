@@ -25,7 +25,10 @@ const SingUp = () => {
   };
 
   const SendInfo = () =>{
-    if(userValue.name.trim() !== '' || userValue.userName.trim() !== '' || userValue.email.trim() !== ''|| userValue.password.trim() !== '' )
+    if(userValue.name.trim() !== '' || userValue.userName.trim() !== '' || userValue.email.trim() !== ''|| userValue.password.trim() !== '' ){
+      alert('Please fill in all fields!')
+      return    
+    }
 
 
     setUserValue({
@@ -48,7 +51,7 @@ const SingUp = () => {
 
             <div className={Styles['SingUp_Form-text']}>
                 <h1>Sign Up</h1>
-                <p>Already have an account? <span onClick={() => navigate('/')}>Sign in</span></p>
+                <p>Already have an account? <span onClick={() => navigate('/singIn')}> Sign in</span></p>
             </div>
 
             <div className={Styles['SingUp_Form']}>
