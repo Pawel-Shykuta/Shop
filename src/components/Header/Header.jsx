@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './HeaderStyle.module.scss'
 
 import { FaOpencart } from "react-icons/fa6";
@@ -29,6 +29,17 @@ const Header = () =>{
     const Search = () =>{
         setText('')
     }
+    
+    useEffect(() => {
+    if (!isOpen) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+
+    return () => (document.body.style.overflow = 'auto');
+    }, [isOpen]);
+
 
     return(
         <header className={styles.Header_Wrapper}>
