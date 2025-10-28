@@ -1,0 +1,360 @@
+
+
+        .Home_Banner_Strell {
+            display: inline-block; 
+            width: 13.6px;
+            height: 1px;
+            border-radius: 1px;
+            background-color: black;
+            vertical-align: middle; 
+            position: relative;
+            cursor: pointer;
+            margin-left: 6px;
+
+            z-index: 2;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                right: -1px;
+                width: 7px;
+                height: 1px;
+                background-color: black;
+                border-radius: 1px;
+                transform-origin: right center;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+                top: 0px;
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+                bottom: 0px;
+            }
+
+
+            transition: transform 0.2s ease;
+            &:hover {
+                transform: translateX(3px);
+            }
+    }
+
+    .Home_NewProducts{
+        width: 100%;
+        max-width: 1120px;
+        height: 669px;
+      
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 48px;
+
+        .Home_Products-Text{
+            width: 100%;
+            height: 88px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 40px;
+                line-height: 44px;
+                letter-spacing: -0.4px;
+            }
+
+            p{
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: -0.4px;
+                cursor: pointer;
+                transition: all .3s ease;
+
+                &:hover{
+                    transform: translateX(5px);
+                }
+            }
+
+    
+        }
+        
+        .Home_Products-Elements{
+            width: 100%;
+            height:auto;
+
+            display: flex;
+            gap: 24px;
+            
+            .Home_Products_Elements{
+                width: 262px;
+                height: auto;
+                opacity: 1;
+
+                border: 1px solid  rgb(255, 247, 247);
+                border-radius: 5px;
+                
+                background: linear-gradient(rgb(255, 253, 253),  #F3F5F7);
+                
+                .Home_Elements_Foto{
+                    width: 262px;
+                    height: 249px;
+                    opacity: 1;
+                    padding: 16px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+    
+                    .Home_Fotos_Status{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    
+                        div{
+                            width: 67px;
+                            height: 24px;
+                            padding-top: 4px;
+                            padding-right: 14px;
+                            padding-bottom: 4px;
+                            padding-left: 14px;
+                            gap: 8px;
+                            opacity: 1;
+                            border-radius: 4px;
+                        
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 16px;
+                            letter-spacing: 0%;
+                            text-align: center;
+                            text-transform: uppercase;
+
+                        };
+
+                        .Home_Element_Status{
+                            color: black;
+                            background: #FFFFFF;
+                        }
+                        .Home_Element_Discount{
+                            color: white;
+                            background: #38CB89;
+                        }
+
+
+                    }
+                    
+
+                }
+
+                .Home_Elements_Info{
+                    width: 100%;
+                    height: auto;
+                
+                    padding: 15px;
+
+                    .Home_Products_BTN{
+                        width: 230px;
+                        height: 46px;
+                        padding-top: 8px;
+                        padding-right: 24px;
+                        padding-bottom: 8px;
+                        padding-left: 24px;
+                        gap: 4px;
+                        opacity: 1;
+                        top: 287px;
+                        left: 16px;
+                        border-radius: 8px;
+                        border: none;
+
+                        background: #141718;
+                        color: white;
+
+                        font-weight: 500;
+                        font-style: Medium;
+                        font-size: 16px;
+                        line-height: 28px;
+                        letter-spacing: -0.4px;
+                        text-align: center;
+
+                        cursor: pointer;
+                        transition: all .3s ease;
+
+                        &:hover{
+                            transform: scale(1.03);
+                        }
+
+                        &:active{
+                            transform: scale(1);
+                        }
+                    }  
+
+                    .Home_Products_Starts span {
+                        color: #343839;   
+                        font-size: 16px;  
+                        margin-right: 2px;
+                    }
+                    
+                    h3{
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 26px;
+                        letter-spacing: 0px;
+                    }
+
+                    h4{
+                        font-weight: 400;
+                        font-style: Semi Bold;
+                        font-size: 14px;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+}
+
+@media (max-width:450px) {
+
+        .Home_NewProducts{
+            margin-top: 20%;
+            width: 90%;
+            height: auto;
+            
+            gap: 40px;
+            
+            .Home_Products-Text{
+                width: 100%;
+                height: 76px;
+                align-items: end;
+                padding: 0 20px;
+
+                h1{
+                    width: 125px;
+                    height: 76px;
+                    
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 34px;
+                    line-height: 38px;
+                    letter-spacing: -0.6px;
+                }
+
+                p{
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: 0px;
+                }
+        
+            }
+            
+            .Home_Products-Elements{
+                width: 100%;
+                height:auto;
+
+                gap: 16px;
+                
+                overflow-y: auto;
+
+                .Home_Products_Elements{
+                    width: 231px;
+                    height: auto;                    
+                    
+                    .Home_Elements_Foto{
+                        width: 231px;
+                        height: 249px;
+                        opacity: 1;
+                        padding: 16px;
+
+
+                        .Home_Fotos_Status{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                        
+                            div{
+                                width: 71px;
+                                height: 24px;
+                                background-color: white
+                            };
+                        }                      
+                    }
+
+                    .Home_Elements_Info{
+                        width: 100%;
+                        height: auto;
+
+                        .Home_Products_BTN{
+                            width: 200px;
+                            height: 46px;
+                            padding-top: 8px;
+                            padding-right: 24px;
+                            padding-bottom: 8px;
+                            padding-left: 24px;
+                            gap: 4px;
+                            opacity: 1;
+                            top: 287px;
+                            left: 16px;
+                            border-radius: 8px;
+                            border: none;
+
+                            background: #141718;
+                            color: white;
+
+                            font-weight: 500;
+                            font-style: Medium;
+                            font-size: 16px;
+                            line-height: 28px;
+                            letter-spacing: -0.4px;
+                            text-align: center;
+
+                            cursor: pointer;
+                            transition: all .3s ease;
+
+                            &:hover{
+                                transform: scale(1.03);
+                            }
+
+                            &:active{
+                                transform: scale(1);
+                            }
+                        }  
+
+                        .Home_Products_Starts span {
+                            color: #343839;   
+                            font-size: 16px;  
+                            margin-right: 2px;
+                        }
+                        
+                        h3{
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 26px;
+                            letter-spacing: 0px;
+                        }
+
+                        h4{
+                            font-weight: 400;
+                            font-style: Semi Bold;
+                            font-size: 14px;
+                            line-height: 22px;
+                            letter-spacing: 0px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+}

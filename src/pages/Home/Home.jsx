@@ -1,48 +1,50 @@
 
 import Styles from './HomeStyle.module.scss'
 
+import HomeBaners from './UI/HomeBaners/Home_Baners'
+import HomeNewProducts from './UI/HomeNewProducts/HomeNewProducts'
+import HomeSliderSection from './UI/HomeSliderSection/HomeSliderSection'
+
 
 const Home = () =>{
 
+    const arr = [
+        {
+            stars: 5,
+            img:'https://i.postimg.cc/RF73hXzy/ad39442a09e9f258591ca60c51fbb83b2fe3c83b.jpg',
+            status:'new',
+            discount:'-50',
+            name:'lampa',
+            price:300
+        },{
+            stars: 5,
+            img:'https://i.postimg.cc/D0ryVJyw/3517f37e33f1e0c5a7b0e2f947e18bbaa1f98631.jpg',
+            status:'alt',
+            discount:'-50',
+            name:'lampa',
+            price:300
+        },{
+            stars: 5,
+            img:'https://i.postimg.cc/RF73hXzy/ad39442a09e9f258591ca60c51fbb83b2fe3c83b.jpg',
+            status:'sale',
+            discount:'-50',
+            name:'lampa',
+            price:500
+        },{
+            stars: 5,
+            img:'https://i.postimg.cc/D0ryVJyw/3517f37e33f1e0c5a7b0e2f947e18bbaa1f98631.jpg',
+            status:'new',
+            discount:'-50',
+            name:'lampa',
+            price:800
+        }
+    ]
 
     return(
         <section className={Styles.Home_Wrapper}>
-            
-            <div className={Styles['Home_Slider-section']}>
-                <img src="https://i.postimg.cc/tCzLbRnV/7dcefc240db6128ab1993d65eae0e96498fbd94e.jpg" alt="SliderFoto" />
-                
-                <div className={Styles['Home_Slide-Info']}>
-                    <h1>Simply Unique <span>/</span><br/>
-                        Simply Better <span>.</span></h1> 
-                    <p><span>3legant</span> is a gift & decorations store based in HCMC, 
-                        Vietnam. Est since 2019. </p>
-                </div>
-            </div>
-
-            <div className={Styles.Home_Baner}>
-                <div className={Styles['Home_Baner_Big-Card']}>
-                    <h2>Living Room</h2>
-                    <h4>Shop Now 
-                        <span className={Styles.Home_Banner_Strell}></span>
-                    </h4>
-                </div>
-
-                <div className={Styles['Home_Baner_Small-Card']}>
-                    <div className={`${Styles['Home_Baner_Small-Top']} ${Styles['Home_Baner-Small-element']}`}>
-                        <h2>Bedroom</h2>
-                        <h4>Shop Now 
-                            <span className={Styles.Home_Banner_Strell}></span>
-                        </h4>
-                    </div>
-                
-                    <div className={`${Styles['Home_Baner_Small-Bottom']} ${Styles['Home_Baner-Small-element']}`}>
-                        <h2>Kitchen</h2>
-                        <h4>Shop Now 
-                            <span className={Styles.Home_Banner_Strell}></span>
-                        </h4>
-                    </div>
-                </div>
-            </div>
+            <HomeSliderSection />
+            <HomeBaners/>
+            <HomeNewProducts arr={arr}/>
 
         </section>
     )
