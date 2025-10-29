@@ -4,6 +4,8 @@ import Styles from './HomeStyle.module.scss'
 import HomeBaners from './UI/HomeBaners/Home_Baners'
 import HomeNewProducts from './UI/HomeNewProducts/HomeNewProducts'
 import HomeSliderSection from './UI/HomeSliderSection/HomeSliderSection'
+import Loyout from './UI/Loyout/Loyout'
+import Values from './UI/Values/Values'
 
 
 const Home = () =>{
@@ -45,7 +47,8 @@ const Home = () =>{
             <HomeSliderSection />
             <HomeBaners/>
             <HomeNewProducts arr={arr}/>
-
+            <Values/>
+            <Loyout/>
         </section>
     )
 }
