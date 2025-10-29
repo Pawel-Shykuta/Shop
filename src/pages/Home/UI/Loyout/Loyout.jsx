@@ -1,4 +1,5 @@
 
+import HomeBannerStrell from '../../../../components/UI/HomeBannerStrell/HomeBannerStrell'
 import Styles from './LoyoutStyle.module.scss'
 
 const Loyout = () =>{
@@ -13,8 +14,8 @@ const Loyout = () =>{
                     <h1>HUNDREDS of New lower prices!</h1>
                     <h2>It’s more affordable than ever to give every room in your home a stylish makeover</h2>
                 </div>
-
-                <p>Shop Now <span className={Styles.Home_Banner_Strell}></span></p>
+                <HomeBannerStrell text='Shop Now' className={Styles.Home_Loyaut_Strell}/>
+                
             </div>
         </section>
     )

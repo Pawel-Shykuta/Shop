@@ -1,3 +1,4 @@
+import HomeBannerStrell from '../../../../components/UI/HomeBannerStrell/HomeBannerStrell'
 import Styles from './HomeNewProductsStyles.module.scss'
 
 const HomeNewProducts = ({arr}) => {
@@ -6,7 +7,7 @@ const HomeNewProducts = ({arr}) => {
             <div className={Styles.Home_NewProducts}>
                 <div className={Styles['Home_Products-Text']}>
                     <h1>New Arrivals</h1>
-                    <p>More Products <span className={Styles.Home_Banner_Strell}></span></p>
+                    <HomeBannerStrell className={Styles.Home_MoreProd} text='More Products'/>
                 </div>
 
                 <div className={Styles['Home_Products-Elements']}>
