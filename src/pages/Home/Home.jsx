@@ -1,9 +1,12 @@
 
+import { useState } from 'react'
 import Styles from './HomeStyle.module.scss'
+import BlogSection from './UI/BlogSection/BlogSection'
 
 import HomeBaners from './UI/HomeBaners/Home_Baners'
 import HomeNewProducts from './UI/HomeNewProducts/HomeNewProducts'
 import HomeSliderSection from './UI/HomeSliderSection/HomeSliderSection'
+import ImagePlaceholder from './UI/ImagePlaceholder/ImagePlaceholder'
 import Loyout from './UI/Loyout/Loyout'
 import Values from './UI/Values/Values'
 
@@ -40,7 +43,9 @@ const Home = () =>{
             name:'lampa',
             price:800
         }
-    ]
+    ]   
+
+    const [email, setEmail] = useState('')
 
     return(
         <section className={Styles.Home_Wrapper}>
@@ -49,6 +54,8 @@ const Home = () =>{
             <HomeNewProducts arr={arr}/>
             <Values/>
             <Loyout/>
+            <BlogSection/>
+            <ImagePlaceholder email={email} setEmail={setEmail}/>
         </section>
     )
 }
