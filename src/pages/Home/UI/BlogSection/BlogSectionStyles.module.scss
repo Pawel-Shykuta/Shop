@@ -74,8 +74,9 @@
 
 @media (max-width:450px) {
     .Home_BlogSection{
-        height: 1277px;
-
+        height: auto;
+        padding: 40px 0;
+        
         .Home_BlogNavigation{
             width: 85%;
             height: 38px;
