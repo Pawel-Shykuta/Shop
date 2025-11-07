@@ -144,9 +144,9 @@ const ItemsContainer = () =>{
     
     const [curentIndex, setCurrentIndex] = useState(1)
 
-    const isPhone = window.innerWidth < 450
+    const isPhone = window.innerWidth > 450
     
-    let towarsLength = isPhone ? 12 : 8
+    const  towarsLength = isPhone ? 12 : 8
 
     const lastIndex = curentIndex * towarsLength
     const firstIndex = lastIndex - towarsLength
