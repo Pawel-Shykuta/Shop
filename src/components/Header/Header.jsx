@@ -24,6 +24,7 @@ const Header = () =>{
     const changePage = (nav) =>{
         navigate(nav)
         setIsOpen(true)
+        window.scrollTo({top:0, behavior:'smooth'})
     }
 
     const Search = () =>{
@@ -31,11 +32,11 @@ const Header = () =>{
     }
     
     useEffect(() => {
-    if (!isOpen) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+        if (!isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
 
     return () => (document.body.style.overflow = 'auto');
     }, [isOpen]);
@@ -66,7 +67,7 @@ const Header = () =>{
                 }
                 
                 <li onClick={() => changePage('/')}>Home</li>
-                <li>Shop</li>
+                <li onClick={() => changePage('/Shop')}>Shop</li>
                 <li>Product</li>
                 <li>Contact Us</li>
             </ul>

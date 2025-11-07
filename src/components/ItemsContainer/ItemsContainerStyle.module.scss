@@ -1,0 +1,326 @@
+
+.Shop_Towars_Items_Container{
+    width: 100%;
+    margin-top: 40px;
+
+    display: flex;
+    gap: 20px;
+    
+    flex-wrap: wrap;
+
+    .Home_Products_Elements{
+        width: 262px;
+        height: 450px;
+        opacity: 1;
+        
+        border: 1px solid  rgb(255, 247, 247);
+        border-radius: 5px;
+        
+        background: linear-gradient(rgb(255, 253, 253),  #F3F5F7);
+        
+        .Home_Elements_Foto{
+            width: 262px;
+            height: 349px;
+            opacity: 1;
+            padding: 16px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+            
+            &:hover .Home_Products_BTN{
+                opacity: 1;
+            }
+
+            .Home_Products_BTN{
+                width: 230px;
+                height: 46px;
+                padding-top: 8px;
+                padding-right: 24px;
+                padding-bottom: 8px;
+                padding-left: 24px;
+                gap: 4px;
+                opacity: 0;
+                top: 287px;
+                left: 16px;
+                border-radius: 8px;
+                border: none;
+                
+                background: #141718;
+                color: white;
+                
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 16px;
+                line-height: 28px;
+                letter-spacing: -0.4px;
+                text-align: center;
+                
+                cursor: pointer;
+                transition: all .3s ease;
+                
+                &:hover{
+                    transform: scale(1.03);
+                }
+                
+                &:active{
+                    transform: scale(1);
+                }
+            }  
+
+            .Home_Fotos_Status{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                
+                div{
+                    width: 67px;
+                    height: 24px;
+                    padding-top: 4px;
+                    padding-right: 14px;
+                    padding-bottom: 4px;
+                    padding-left: 14px;
+                    gap: 8px;
+                    opacity: 1;
+                    border-radius: 4px;
+                    
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 16px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    text-transform: uppercase;
+                    
+                };
+                
+                .Home_Element_Status{
+                    color: black;
+                    background: #FFFFFF;
+                }
+                .Home_Element_Discount{
+                    color: white;
+                    background: #38CB89;
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        .Home_Elements_Info{
+            width: 100%;
+            height: auto;
+            
+            padding: 15px;
+                        
+            .Home_Products_Starts span {
+                color: #343839;   
+                font-size: 16px;  
+                margin-right: 2px;
+            }
+            
+            h3{
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+            
+            h4{
+                font-weight: 600;
+                font-style: Semi Bold;
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 0px;
+                margin-bottom: 20px;
+                border: none;
+
+                span{
+                    margin-left: 12px;
+                    font-weight: 600;
+                    font-style: Regular;
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                    text-decoration: line-through;
+                    color: #6C7275;
+                }
+            }
+        }
+    }
+
+    .Shop_Towars_pagitanion{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        .Shop_Towars_pagitanion_BTN{
+            width: 30px;
+            height: 30px;
+
+            border: none;
+            border-radius: 5px;
+
+            background-color: black;
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover{
+                transform: scale(1.05);
+            }
+            &:active{
+                transform: scale(.9);
+            }
+        }
+
+        .Shop_Towars_pagitanion_BTN_Active{
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+    }
+}
+
+
+@media(max-width:450px){
+    .Shop_Towars_Items_Container{
+        width: 120%;
+        margin-left: -10%;
+        height: auto;
+        
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 16px 8px;
+
+        .Home_Products_Elements{
+            width: 48%;
+            height: 300px;                    
+
+            .Home_Elements_Foto{
+                width: 100%;
+                height: 203px;
+                opacity: 1;
+                padding: 16px;
+                
+                
+                .Home_Products_BTN{
+                    width: 90%;
+                    margin-left: 5%;
+                   
+                    height: 32px;
+
+                    padding: 0px;
+
+                    align-items: center;
+                    justify-content: center;    
+
+                    opacity: 0;
+                        
+                    margin-bottom: -25px;
+
+                    border-radius: 4px;
+                    border: none;
+                    
+                    background: #141718;
+                    color: white;
+                    
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: -0.4px;
+                    text-align: center;
+                } 
+
+                .Home_Fotos_Status{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    
+                    div{
+                        width: 71px;
+                        height: 24px;
+                        background-color: white
+                    };
+                }                      
+            }
+            
+            .Home_Elements_Info{
+                width: 100%;
+                height: auto;
+                 
+                
+                .Home_Products_Starts span {
+                    color: #343839;   
+                    font-size: 16px;  
+                    margin-right: 2px;
+                }
+                
+                h3{
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 26px;
+                    letter-spacing: 0px;
+                }
+                
+                h4{
+                    font-weight: 400;
+                    font-style: Semi Bold;
+                    font-size: 14px;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                    margin-bottom: 20px;
+                }
+            }
+            
+        }
+
+        .Shop_Towars_pagitanion{
+            gap: 15px;
+            height: auto;
+            flex-wrap: nowrap;
+
+            .Shop_Towars_pagitanion_BTN{
+                width: 40px;
+                height: 40px;
+
+                border: none;
+                border-radius: 5px;
+
+                background-color: black;
+                color: white;
+
+                font-size: 20px;
+
+                cursor: pointer;
+                transition: all .3s ease;
+
+                &:hover{
+                    transform: scale(1.05);
+                }
+                &:active{
+                    transform: scale(.9);
+                }
+            }
+
+            .Shop_Towars_pagitanion_BTN_Active{
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+            }
+        }
+    }
+}

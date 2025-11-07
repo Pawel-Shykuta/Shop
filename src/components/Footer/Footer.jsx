@@ -24,7 +24,7 @@ const Footer = () =>{
                     
                 <nav className={Styles.Footer_Navigation}>
                     <li onClick={() => newChangeLocation('/')}>Home</li>
-                    <li>Shop</li>
+                    <li onClick={() => newChangeLocation('/Shop')}>Shop</li>
                     <li>Products</li>
                     <li>Blog</li>
                     <li>Contact Us</li>

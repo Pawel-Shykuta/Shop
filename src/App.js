@@ -9,6 +9,7 @@ import SingIn from "./pages/Login/SingIn/SingIn";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Shop from "./pages/Shop/Shop";
 
 function AppContent(){
   const location = useLocation()
@@ -20,6 +21,7 @@ function AppContent(){
           <Routes>
             <Route path="/SingIn" element={<SingIn/>}/>
             <Route path="/SingUp" element={<SingUp/>}/>
+            <Route path="/Shop" element={<Shop/>}/>
             <Route path="/" element={<Home/>}/>
           </Routes>
         {!hideLocation && <Footer/>}          
