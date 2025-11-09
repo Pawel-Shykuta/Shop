@@ -1,8 +1,7 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import Styles from './ToolbarStyle.module.scss'
 
-const Toolbar = () =>{
-    const [sortItem, setSortItem] = useState('Newest')
+const Toolbar = ({sortItem, setSortItem}) =>{
     const detailsRef = useRef(null)
 
     const widthWindow = window.innerWidth > 450
