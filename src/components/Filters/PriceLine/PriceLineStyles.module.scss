@@ -1,0 +1,51 @@
+
+
+.FilterList_Price_Line{
+      width: 95%;
+      height:5px;
+      background-color: rgb(169, 169, 224);
+      border-radius: 2px;
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      
+      margin-bottom: 10px;
+      margin-left: 5px;
+    .FilterList_Price_Line_cursor{
+        width: 11px;
+        height: 11px;
+        background-color: rgb(141, 136, 136);
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+        margin-left: -5px;
+    } 
+}
+
+@media(max-width:450px){
+            .FilterList_Price_Line{
+          width: 96%;
+          height:10px;
+
+          background-color: rgb(169, 169, 224);
+
+          border-radius: 4px;
+          position: relative;
+
+          display: flex;
+          align-items: center;
+          
+          margin-bottom: 10px;
+
+          .FilterList_Price_Line_cursor{
+            width: 20px;
+            height: 20px;
+            background-color: rgb(170, 158, 158);
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            margin-left: -10px;
+          } 
+        }
+}

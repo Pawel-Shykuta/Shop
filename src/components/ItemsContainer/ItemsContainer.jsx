@@ -51,7 +51,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
                 </div>
             ))}
 
-            <div className={Styles.Shop_Towars_pagitanion}>
+            {pageItems > 1 &&<div className={Styles.Shop_Towars_pagitanion}>
                 {Array.from({length: pageItems}).map((_, index) => (
                     <button 
                         key={index}
@@ -63,7 +63,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
                             {index + 1}
                     </button>
                 ))}
-            </div>
+            </div>}
         </section>
     )
 }
