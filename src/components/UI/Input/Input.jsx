@@ -1,6 +1,6 @@
 
 
-const Input = ({ label, type = 'text', value, name, placeholder, onChange, className , style}) => {
+const Input = ({ label, type = 'text', value, name, placeholder, onChange, className , style, disabled}) => {
   return (
     <div className={className}>
       {label && <label>{label}</label>}
@@ -11,6 +11,7 @@ const Input = ({ label, type = 'text', value, name, placeholder, onChange, class
         placeholder={placeholder}
         onChange={onChange}
         style={style}
+        disabled={disabled}
       />
     </div>
   );

@@ -10,14 +10,20 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Shop from "./pages/Shop/Shop";
+import Cart from "./components/Cart/Cart";
+import { useState } from "react";
 
 function AppContent(){
   const location = useLocation()
   const hideLocation = location.pathname.includes("singIn") || location.pathname.includes("SingUp");
 
+  const [cartOpen, setCartOPen] = useState(false)
+
   return(
       <main>
-        {!hideLocation && <Header/>}
+        {!hideLocation && <Header setCartOPen={setCartOPen}/>}
+          {cartOpen && <Cart/>}
+
           <Routes>
             <Route path="/SingIn" element={<SingIn/>}/>
             <Route path="/SingUp" element={<SingUp/>}/>

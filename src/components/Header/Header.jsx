@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 
-const Header = () =>{
+const Header = ({setCartOPen}) =>{
     const navigate = useNavigate()
     const isMobile = window.innerWidth <= 450
 
@@ -91,7 +91,7 @@ const Header = () =>{
                     <span className={styles.Header_Body}></span>
                 </div>
 
-                <FaOpencart className={styles.Header_Cart}/>
+                <FaOpencart className={styles.Header_Cart} onClick={() => setCartOPen(prev => !prev)}/>
             </div>
         </header>
     )

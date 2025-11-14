@@ -71,31 +71,17 @@ const Filters = ({ setFilters, filters }) => {
           <Input
             placeholder="from"
             label="Min Price"
-            type="number"
+            type="text"
             value={filterPrice.minPrice * 50} 
-            onChange={e => {
-                const val = e.target.value;
-                setFilterPrice(prev => ({
-                  ...prev,                                
-                  minPrice: val === '' ? 0 : Number(val) / 50
-                }));
-              }}
+            disabled
           />
 
           <Input
             placeholder="to"
             label="Max Price"
-            type="number"
+            type="text"
             value={filterPrice.maxPrice * 50}
-
-            onChange={e => {
-              const val = e.target.value;
-              setFilterPrice(prev => ({
-                ...prev,
-                maxPriceINput:val,
-                maxPrice: val === "" ? 0 : Number(val) / 50
-              }));
-            }}
+            disabled
           />
 
             <PriceLine setFilterPrice={setFilterPrice} filterPrice={filterPrice} />
