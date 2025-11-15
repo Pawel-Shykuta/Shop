@@ -3,13 +3,13 @@ import Styles from './ShopStyle.module.scss'
 import ShopPageHeader from './UI/PageHeader/ShopPageHeader'
 import TowarsContainer from './UI/TowarsContiner/TowarsContainer' 
 
-const Shop = () =>{
+const Shop = ({setCatItem}) =>{
 
     return(
         <section className={Styles.Shop_Wrapper}>
             <ShopPageHeader/>
                 <div className={Styles.Shop_Products}>
-                    <TowarsContainer />
+                    <TowarsContainer setCatItem={setCatItem}/>
                 </div>
         </section>
     )

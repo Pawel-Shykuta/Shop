@@ -2,7 +2,7 @@ import { useState } from 'react'
 import clsx from "clsx";
 import Styles from './ItemsContainerStyle.module.scss'
 
-const ItemsContainer = ({towarsItemsArr}) =>{
+const ItemsContainer = ({towarsItemsArr, setCatItem}) =>{
 
 
     
