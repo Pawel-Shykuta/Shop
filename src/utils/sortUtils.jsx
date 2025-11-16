@@ -6,17 +6,17 @@ export const mergeSortAlphabetically  = (arr) => {
     const left = mergeSortAlphabetically(arr.slice(0, mid));
     const right = mergeSortAlphabetically(arr.slice(mid));
 
-    const res  = [];
 
-    while(left.length && right.length){
-        if((left[0].name || '').localeCompare(right[0].name || '') <= 0){
-            res.push(left.shift());
-        } else {
-            res.push(right.shift());
-        }
+    let i = 0, j = 0, k = 0
+
+    while(i < left.length && j < right.length){
+        arr[k++] = left[i] < right[j] ? left[i++] : right[j++]
     }
 
-    return [...res, ...left, ...right];
+    while(i < left.length) arr[k++] = left[i++]
+    while(j < right.length) arr[k++] = right[j++]
+
+    return arr
 }
 
 // Z-A

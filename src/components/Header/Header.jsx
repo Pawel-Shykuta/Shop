@@ -7,15 +7,17 @@ import { useNavigate } from 'react-router-dom';
 
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
+import { useGlobal } from '../../utils/GlobalContext';
 
 const Header = ({setCartOPen}) =>{
     const navigate = useNavigate()
     const isMobile = window.innerWidth <= 450
 
     const [text, setText] = useState('')
-
     const [isOpen, setIsOpen] = useState(true)
     const [searcOpen, setSearchOpen] = useState(false)
+
+    const {cartItems} = useGlobal()
 
     const OpenAsideMenu = () =>{
         setIsOpen(!isOpen)
@@ -90,8 +92,10 @@ const Header = ({setCartOPen}) =>{
                     <span className={styles.Header_Head}></span>
                     <span className={styles.Header_Body}></span>
                 </div>
-
-                <FaOpencart className={styles.Header_Cart} onClick={() => setCartOPen(prev => !prev)}/>
+                <div className={styles.Header_Cart_Wrapper} onClick={() => setCartOPen(prev => !prev)}>
+                    <FaOpencart className={styles.Header_Cart}/>
+                    {cartItems.length > 0 && <span>{cartItems.length}</span>}
+                </div>
             </div>
         </header>
     )

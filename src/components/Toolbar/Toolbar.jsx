@@ -32,7 +32,7 @@ const Toolbar = ({sortItem, setSortItem, setFilters, filters}) =>{
                     <summary>{sortItem}</summary>
 
                     <ul>
-                        {['Newest', 'Oldest', 'A–Z', 'Z–A'].map((item) =>(
+                        {['New', 'Old', 'From-max', 'From-min'].map((item) =>(
                             <li key={item} onClick={() => SortChange(item)}>
                                 {item}
                             </li>

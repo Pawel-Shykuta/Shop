@@ -56,13 +56,13 @@ const TowarsContainer = () =>{
         sortedArr = sortedArr.filter(el => el.price >= filters.minPrice && el.price <= filters.maxPrice);
 
 
-        if (sortItem === 'Newest') {
+        if (sortItem === 'New') {
             sortedArr = QuickSort(sortedArr);
-        } else if (sortItem === 'Oldest') {
+        } else if (sortItem === 'Old') {
             sortedArr = QuickSortReverse(sortedArr);
-        } else if (sortItem === 'A–Z') {
+        } else if (sortItem === 'From-max') {
             sortedArr = mergeSortAlphabetically(sortedArr);
-        } else if (sortItem === 'Z–A') {
+        } else if (sortItem === 'From-min') {
             sortedArr = mergeSortAlphabeticallyReverse(sortedArr);
         }
 

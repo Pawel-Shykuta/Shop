@@ -187,21 +187,47 @@
         }
     }
 
-    .Header_Cart{
+    .Header_Cart_Wrapper{
         width: 50px;
         height: 28px;
-        transition: all .3s ease;
-        cursor: pointer;
+        position: relative;
 
-        &:hover{
-            opacity: .8;
-            transform: scale(1.1);
+        .Header_Cart{
+            width: 50px;
+            height: 28px;
+            transition: all .3s ease;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .8;
+                transform: scale(1.1);
+            }
+            &:active{
+                opacity: 1;
+                transform: scale(1);
+            }    
         }
-        &:active{
-            opacity: 1;
-            transform: scale(1);
+
+        span{
+            display: block;
+            position: absolute;
+            bottom: 0%;
+            left: 15%;
+
+            width: 15px;
+            height: 15px;
+            background-color: rgb(17, 211, 17);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 15px;
+            color: white;
         }
     }
+
 
 }
 
