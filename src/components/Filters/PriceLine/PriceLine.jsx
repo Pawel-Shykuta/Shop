@@ -8,6 +8,7 @@ const PriceLine = ({filterPrice, setFilterPrice}) =>{
     const [activeTumbler, setActiveTumbler] = useState(null);
 
     const mouseDown = (tumb) => setActiveTumbler(tumb);
+
     const mouseMove = (e) => {
         if (!activeTumbler) return;
 
@@ -28,7 +29,6 @@ const PriceLine = ({filterPrice, setFilterPrice}) =>{
 
           return { minPrice: newMin, maxPrice: newMax };
       });
-
     };
 
     const mouseUp = () => setActiveTumbler(null);

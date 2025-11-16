@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import clsx from "clsx";
 import Styles from './ItemsContainerStyle.module.scss'
+import { useGlobal } from '../../utils/GlobalContext';
 
-const ItemsContainer = ({towarsItemsArr, setCatItem}) =>{
+const ItemsContainer = ({towarsItemsArr}) =>{
 
-
+    const {setCartItems, cartItems} = useGlobal()
     
     const [curentIndex, setCurrentIndex] = useState(1)
 
@@ -22,6 +23,22 @@ const ItemsContainer = ({towarsItemsArr, setCatItem}) =>{
         setCurrentIndex(page)
     }
 
+
+
+    const AddToCart = (el) => {
+        const existingItem = cartItems.find(item => item.id === el.id);
+
+        if (existingItem) {
+            setCartItems(prev =>
+                prev.map(item =>
+                    item.id === el.id ? { ...item, quantity: item.quantity + 1 } : item
+                )
+            );
+        } else {
+            setCartItems(prev => [...prev, { ...el, quantity: 1 }]);
+        }
+    };
+
     return(
         <section className={Styles.Shop_Towars_Items_Container}>
             {towarsItems.map((el, index) =>(
@@ -35,7 +52,7 @@ const ItemsContainer = ({towarsItemsArr, setCatItem}) =>{
                             <div className={Styles.Home_Element_Discount}>{el.discount}</div>
                         </div>
 
-                        <button className={Styles.Home_Products_BTN}>Add to cart</button>
+                        <button className={Styles.Home_Products_BTN} onClick={() => AddToCart(el)}> Add to cart</button>
                     </div>
                             <div className={Styles.Home_Elements_Info}>
                                 <div className={Styles.Home_Products_Starts}>

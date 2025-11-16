@@ -19,17 +19,15 @@ function AppContent(){
 
   const [cartOpen, setCartOPen] = useState(false)
 
-    const [cartItems, setCatItem] = useState([])
-
   return(
       <main>
         {!hideLocation && <Header setCartOPen={setCartOPen}/>}
-          {cartOpen && <Cart setCartOPen={setCartOPen} cartItems={cartItems}/>}
+          {cartOpen && <Cart setCartOPen={setCartOPen} />}
 
           <Routes>
             <Route path="/SingIn" element={<SingIn/>}/>
             <Route path="/SingUp" element={<SingUp/>}/>
-            <Route path="/Shop" element={<Shop setCatItem={setCatItem}/>}/>
+            <Route path="/Shop" element={<Shop/>}/>
             <Route path="/" element={<Home/>}/>
           </Routes>
         {!hideLocation && <Footer/>}          

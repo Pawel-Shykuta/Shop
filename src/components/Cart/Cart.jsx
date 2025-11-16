@@ -1,38 +1,36 @@
 
-import { useState } from 'react'
 import Styles from './CartStyle.module.scss'
 import Button from '../UI/Button/Button'
+import { useGlobal } from '../../utils/GlobalContext'
 
-const Cart = ({setCartOPen , cartItems}) =>{
+const Cart = ({setCartOPen}) =>{
 
-    const [count, setCount] = useState(
-        cartItems.map(item => ({...item, quantity: 1}))
-    ) 
+    const {cartItems, setCartItems} = useGlobal()
 
 
 
     
     const changeCount = (num, id) =>{
-        setCount(prev =>{
+        setCartItems(prev =>{
             return prev.map(el => {
-                return el.id === id ? {...el, quantity : el.quantity + num} : el
+                return el.id === id ? {...el, quantity: el.quantity + num} : el
             }).filter(el => el.quantity > 0)
         })
     } 
 
     return(
-        <section className={Styles.Cart_Wrapper}>
+        <section className={Styles.Cart_Wrapper} onClick={() => setCartOPen(false)}>
 
-            <div className={Styles.Cart_Container}>                
+            <div className={Styles.Cart_Container} onClick={(e) => e.stopPropagation()}>                
                 <div className={Styles.Cart_Items_Container}>
 
                     <div className={Styles.Cart_Items_Close}>
                         <h1>Cart</h1>
 
-                        <span onClick={() => setCartOPen(false)}></span>
+                        <span onClick={() => {setCartOPen(false)}}></span>
                     </div>
 
-                    {count.map((el, index) => (
+                    {cartItems.map((el, index) => (
                         <div key={index} className={Styles.Cart_Item}>
                             <img src={el.img} alt="" />
                             <div className={Styles.Cart_Item_Info_Container}>
@@ -49,7 +47,7 @@ const Cart = ({setCartOPen , cartItems}) =>{
 
                                 <div className={Styles.Cart_Item_price}>
                                     ${el.price * el.quantity}
-                                    <div onClick={() => setCount(prev => prev.filter(itme => itme.id !== el.id))}></div>
+                                    <div onClick={() => setCartItems(prev => prev.filter(item => item.id !== el.id))}></div>
                                 </div>
                             </div>                           
                         </div>
@@ -60,7 +58,7 @@ const Cart = ({setCartOPen , cartItems}) =>{
 
                     <div className={Styles.Cart_Price_Container}>
                         <h2>Total</h2>
-                        <h3>${count.reduce((acc, el) => acc + el.price * el.quantity, 0)}</h3>
+                        <h3>${cartItems.reduce((acc, el) => acc + el.price * el.quantity, 0)}</h3>
                     </div>
                     
                     <div className={Styles.Cart_Button_Container}>
