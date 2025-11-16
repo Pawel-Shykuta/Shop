@@ -2,17 +2,16 @@ import { useState } from 'react'
 import clsx from "clsx";
 import Styles from './ItemsContainerStyle.module.scss'
 import { useGlobal } from '../../utils/GlobalContext';
+import { useNavigate } from 'react-router-dom';
 
 const ItemsContainer = ({towarsItemsArr}) =>{
+    const navigate = useNavigate()
 
     const {setCartItems, cartItems} = useGlobal()
-    
     const [curentIndex, setCurrentIndex] = useState(1)
-
     const isPhone = window.innerWidth > 450
-    
-    const  towarsLength = isPhone ? 12 : 8
 
+    const  towarsLength = isPhone ? 12 : 8
     const lastIndex = curentIndex * towarsLength
     const firstIndex = lastIndex - towarsLength
     const towarsItems = towarsItemsArr.slice(firstIndex, lastIndex)
@@ -42,7 +41,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
     return(
         <section className={Styles.Shop_Towars_Items_Container}>
             {towarsItems.map((el, index) =>(
-                <div key={index} className={Styles.Home_Products_Elements}>   
+                <div key={index} className={Styles.Home_Products_Elements} onClick={() => navigate(`/ItemPage/${el.id}`)}>   
                     <div 
                        className={Styles.Home_Elements_Foto} 
                        style={{ backgroundImage: `url(${el.img})` }}
@@ -52,7 +51,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
                             <div className={Styles.Home_Element_Discount}>{el.discount}</div>
                         </div>
 
-                        <button className={Styles.Home_Products_BTN} onClick={() => AddToCart(el)}> Add to cart</button>
+                        <button className={Styles.Home_Products_BTN} onClick={(e) => {AddToCart(el); e.stopPropagation()}}> Add to cart</button>
                     </div>
                             <div className={Styles.Home_Elements_Info}>
                                 <div className={Styles.Home_Products_Starts}>

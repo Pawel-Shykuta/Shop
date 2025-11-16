@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 import './App.scss';
 
@@ -11,7 +12,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Shop from "./pages/Shop/Shop";
 import Cart from "./components/Cart/Cart";
-import { useState } from "react";
+import ItemPage from "./pages/ItemPage/ItemPage";
+
 
 function AppContent(){
   const location = useLocation()
@@ -25,6 +27,7 @@ function AppContent(){
           {cartOpen && <Cart setCartOPen={setCartOPen} />}
 
           <Routes>
+            <Route path="/ItemPage/:id" element={<ItemPage />}/>
             <Route path="/SingIn" element={<SingIn/>}/>
             <Route path="/SingUp" element={<SingUp/>}/>
             <Route path="/Shop" element={<Shop/>}/>
