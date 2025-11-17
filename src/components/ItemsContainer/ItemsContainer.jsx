@@ -80,6 +80,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
                     </button>
                 ))}
             </div>}
+            
         </section>
     )
 }

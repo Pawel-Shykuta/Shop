@@ -1,0 +1,79 @@
+
+.Product_Buttons_Wrapper{
+    width: 100%;
+    height: 184px;
+    
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    button:first-child{
+        width: 40%;
+        background-color: white;
+        color: black;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+
+        transition: all .3s ease;
+        &:hover{
+          transform: scale(1.02);
+        }
+         &:active{
+          transform: scale(1);
+        }
+    }
+
+    button{
+        width: 60%;
+        height: 52px;
+
+        cursor: pointer;
+
+        color: white;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 18px;
+        line-height: 32px;
+        letter-spacing: -0.4px;
+        text-align: center;
+
+        background-color: black;
+        border-radius: 8px;
+        border: 1px solid black;
+
+        transition: all .3s ease;
+        &:hover{
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+@media(max-width:450px){
+    .Product_Buttons_Wrapper{
+        width: 100%;
+        height: 184px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        button:first-child{
+            width: 90%;
+            background-color: white;
+            color: black;
+        }
+
+        button{
+            width: 100%;
+            height: 52px;           
+        }
+    }
+}

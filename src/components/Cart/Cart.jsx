@@ -2,8 +2,7 @@
 import Styles from './CartStyle.module.scss'
 import Button from '../UI/Button/Button'
 import { useGlobal } from '../../utils/GlobalContext'
-import { useEffect } from 'react'
-import { SaveCart } from '../../utils/LocaleStorege'
+
 
 const Cart = ({setCartOPen}) =>{
 
@@ -17,10 +16,6 @@ const Cart = ({setCartOPen}) =>{
             }).filter(el => el.quantity > 0)
         })
     } 
-
-    useEffect(() =>{
-        SaveCart(cartItems)
-    },[cartItems])
 
     return(
         <section className={Styles.Cart_Wrapper} onClick={() => setCartOPen(false)}>
