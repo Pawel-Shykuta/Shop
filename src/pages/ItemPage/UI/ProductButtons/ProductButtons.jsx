@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Styles from './ProductButtonsStyles.module.scss'
 import Button from '../../../../components/UI/Button/Button'
@@ -9,10 +9,9 @@ import { useGlobal } from '../../../../utils/GlobalContext';
 
 
 const ProductButtons = ({item}) =>{
-   
-    const [isLiked, setIsLiked] = useState(false)
+    const {setCartItems, likedProducts, setLikedProducts} = useGlobal()
+    const [isLiked, setIsLiked] = useState(likedProducts.some(el => el.id === item.id))
 
-    const {setCartItems} = useGlobal()
 
     const AddToCart = (item) =>{
         setCartItems(prev => {
@@ -25,6 +24,17 @@ const ProductButtons = ({item}) =>{
         })
     }
 
+    const Licked = (item) =>{
+        const exist = likedProducts.find(el => el.id === item.id)
+
+        if(exist){
+            setLikedProducts(prev => prev.filter(el => el.id !== item.id))
+            setIsLiked(false)
+        }else{
+            setLikedProducts(prev => [...prev, item])
+            setIsLiked(true)
+        }
+    }
 
     return(
         <section className={Styles.Product_Buttons_Wrapper}>               
@@ -33,7 +43,7 @@ const ProductButtons = ({item}) =>{
                     {!isLiked ? <IoHeartOutline fontSize={22}/> : <IoHeartSharp fontSize={22}/>}
                     Wishlist 
                 </>}
-                onClick={() => setIsLiked(prev => !prev)}
+                onClick={() => Licked(item)}
             />
 
             <Button text='Add to Cart' onClick={() => AddToCart(item)}/>

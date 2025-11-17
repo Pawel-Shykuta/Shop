@@ -70,7 +70,7 @@ const Header = ({setCartOPen}) =>{
                 
                 <li onClick={() => changePage('/')}>Home</li>
                 <li onClick={() => changePage('/Shop')}>Shop</li>
-                <li>Product</li>
+                <li onClick={() => changePage('/LikdTowars')}>Liked Products</li>
                 <li>Contact Us</li>
             </ul>
 
@@ -97,6 +97,7 @@ const Header = ({setCartOPen}) =>{
                     {cartItems.length > 0 && <span>{cartItems.length}</span>}
                 </div>
             </div>
+            
         </header>
     )
 }

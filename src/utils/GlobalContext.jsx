@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from "react";
-import { LoadCart } from "./LocaleStorege";
+import { LoadCart, LoadLiced } from "./LocaleStorege";
 
 const GlobalContext = createContext();
 
@@ -7,6 +7,7 @@ const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(LoadCart());
+  const [likedProducts, setLikedProducts] = useState(LoadLiced())
 
   const data = useMemo(() => [
         { id: 1, stars: 3, img:'https://i.postimg.cc/RF73hXzy/ad39442a09e9f258591ca60c51fbb83b2fe3c83b.jpg', status:'new', discount:'-50', name:'Lampa Classic', price:300, oldPrice:200, date:'2025-11-01', room:'Living Room', quantity: 1 },
@@ -31,7 +32,7 @@ export const GlobalProvider = ({ children }) => {
 
 
   return(
-    <GlobalContext.Provider value={{cartItems, setCartItems, data}}>
+    <GlobalContext.Provider value={{cartItems, setCartItems, data, likedProducts, setLikedProducts}}>
         {children}
     </GlobalContext.Provider>
   )

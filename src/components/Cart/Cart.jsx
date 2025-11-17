@@ -2,10 +2,11 @@
 import Styles from './CartStyle.module.scss'
 import Button from '../UI/Button/Button'
 import { useGlobal } from '../../utils/GlobalContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Cart = ({setCartOPen}) =>{
-
+    const navigate = useNavigate()
     const {cartItems, setCartItems} = useGlobal()
 
     
@@ -31,7 +32,7 @@ const Cart = ({setCartOPen}) =>{
 
                     {cartItems.map((el, index) => (
                         <div key={index} className={Styles.Cart_Item}>
-                            <img src={el.img} alt="" />
+                            <img src={el.img} alt="" onClick={() => {navigate(`/ItemPage/${el.id}`); setCartOPen(false)}}/>
                             <div className={Styles.Cart_Item_Info_Container}>
 
                                 <div className={Styles.Cart_Item_Info}>

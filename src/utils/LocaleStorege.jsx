@@ -9,3 +9,11 @@ export const LoadCart = () => {
     return items ? JSON.parse(items) : []
 }
 
+export const SaveLicked = (cartLiked) =>{
+    localStorage.setItem('cartLiked', JSON.stringify(cartLiked))
+}
+
+export const LoadLiced = () =>{
+    const item = localStorage.getItem('cartLiked')
+    return item ? JSON.parse(item) : []
+}

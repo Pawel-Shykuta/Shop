@@ -10,12 +10,9 @@ const ItemPage = () => {
 
     const item = data.find(el => el.id === Number(id))
 
-    console.log(item)
-
     return(
         <section className={Styles.Item_Page_Wrapper}>
             <PageLoyaut item={item}/>
-
         </section>
     )
 }
