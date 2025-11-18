@@ -1,13 +1,23 @@
 .Item_Page_Loyaut_Container{
         width: 100%;
         height: auto;
-
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        gap: 64px;
+        gap: 0;
+
+        .Item_Page_Loyaut{
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+        }
 
         img{
             width: 40%;
+            height: 100%;
         }
         .Item_Page_Loyaut_Info_Wrapper{
             width: 40%;
@@ -84,6 +94,18 @@
         flex-direction: column;
         gap: 64px;
         margin-top: 30px;
+
+        .Item_Page_Loyaut{
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 64px;
+            margin-top: 30px;
+        }
 
         img{
             width: 90%;

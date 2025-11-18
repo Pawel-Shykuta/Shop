@@ -7,7 +7,7 @@ const LikdTowars = () =>{
 
     return(
         <section className={Styles.LikdTowars_Warpper}>
-            Licked
+            Liked
         </section>
     )
 }

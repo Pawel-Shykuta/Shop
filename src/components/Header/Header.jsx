@@ -71,7 +71,7 @@ const Header = ({setCartOPen}) =>{
                 <li onClick={() => changePage('/')}>Home</li>
                 <li onClick={() => changePage('/Shop')}>Shop</li>
                 <li onClick={() => changePage('/LikdTowars')}>Liked Products</li>
-                <li>Contact Us</li>
+                <li onClick={() => changePage('/ContactUs')}>Contact Us</li>
             </ul>
 
             <div className={styles['Header_Others-Navigation']}>
