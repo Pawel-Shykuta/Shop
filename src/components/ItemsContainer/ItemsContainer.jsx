@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from "clsx";
 import Styles from './ItemsContainerStyle.module.scss'
 import { useGlobal } from '../../utils/GlobalContext';
@@ -12,6 +12,7 @@ const ItemsContainer = ({towarsItemsArr}) =>{
     const isPhone = window.innerWidth > 450
 
     const  towarsLength = isPhone ? 12 : 8
+
     const lastIndex = curentIndex * towarsLength
     const firstIndex = lastIndex - towarsLength
     const towarsItems = towarsItemsArr.slice(firstIndex, lastIndex)
@@ -22,7 +23,9 @@ const ItemsContainer = ({towarsItemsArr}) =>{
         setCurrentIndex(page)
     }
 
-
+    useEffect(() =>{
+        setCurrentIndex(1)
+    },[towarsItemsArr])
 
     const AddToCart = (el) => {
         const existingItem = cartItems.find(item => item.id === el.id);
