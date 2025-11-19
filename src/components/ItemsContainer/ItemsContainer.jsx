@@ -41,10 +41,15 @@ const ItemsContainer = ({towarsItemsArr}) =>{
         }
     };
 
+    const ChangePAge = (id) =>{
+        navigate(`/ItemPage/${id}`)
+        window.scrollTo({top:0})
+    }
+
     return(
         <section className={Styles.Shop_Towars_Items_Container}>
             {towarsItems.map((el, index) =>(
-                <div key={index} className={Styles.Home_Products_Elements} onClick={() => navigate(`/ItemPage/${el.id}`)}>   
+                <div key={index} className={Styles.Home_Products_Elements} onClick={() => ChangePAge(el.id)}>   
                     <div 
                        className={Styles.Home_Elements_Foto} 
                        style={{ backgroundImage: `url(${el.img})` }}

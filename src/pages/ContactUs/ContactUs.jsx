@@ -9,8 +9,22 @@ import { CiShop } from "react-icons/ci";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import Values from '../Home/UI/Values/Values';
+import { useState } from 'react';
 
 const ContactUs = () =>{
+
+    const [userMassage, setUserMassage] = useState({
+        name:'',
+        email:'',
+        massage:''
+    })
+
+    const sendMassege = () =>{
+        if(userMassage.name.trim() === ''|| userMassage.email.trim() === '' || userMassage.massage.trim() === '') return
+
+        console.log(userMassage)
+        setUserMassage({name:'', email:'', massage:''})
+    }
 
     return(
         <section className={Styles.ContactUs_Wrapper}>
@@ -69,17 +83,22 @@ const ContactUs = () =>{
                             type='text'
                             placeholder='Your Name'
                             className={Styles.ContactUs_Inputs}
+                            value={userMassage.name}
+                            onChange={(e) => setUserMassage(prev => ({...prev, name:e.target.value}))}
                         />
                         <Input 
                             label='Email address'
                             type='email'
                             placeholder='Your Email'
                             className={Styles.ContactUs_Inputs}
+                            value={userMassage.email}
+                            onChange={(e) => setUserMassage(prev => ({...prev, email:e.target.value}))}
                         />
-                        <textarea placeholder='Your message'>                      
+                        <textarea placeholder='Your message' onChange={(e) => setUserMassage(prev => ({...prev, massage:e.target.value }))}>
+                            {userMassage.massage}                      
                         </textarea>
 
-                        <Button text='Send Message' className={Styles.ContactUs_BTN}/>
+                        <Button text='Send Message' onClick={sendMassege} className={Styles.ContactUs_BTN}/>
                     </div>
 
                     <div className={Styles.Contact_Us_Cart}>
