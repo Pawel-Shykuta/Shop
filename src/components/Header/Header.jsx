@@ -49,7 +49,7 @@ const Header = ({setCartOPen}) =>{
 
             <div className={styles.Header_LogoContainer}>
                 <span className={styles.Heade_BurgerMenu} onClick={OpenAsideMenu}></span>
-                <h1 className={styles.Header_logo}>3legant.</h1>
+                <h1 className={styles.Header_logo} onClick={() => changePage('/')}>3legant.</h1>
             </div>
 
                    

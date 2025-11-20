@@ -62,7 +62,7 @@ const Cart = ({setCartOPen}) =>{
                     </div>
                     
                     <div className={Styles.Cart_Button_Container}>
-                        <Button text='Checkout' className={Styles.Cart_BTN}/>
+                        <Button text='Checkout' onClick={() => {navigate('/CartPage'); setCartOPen(false)}} className={Styles.Cart_BTN}/>
                         <p>View Cart</p>
                     </div>
                 </div>

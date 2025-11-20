@@ -14,6 +14,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Shop from "./pages/Shop/Shop";
 import Cart from "./components/Cart/Cart";
+import CartPage from "./pages/CartPage/CartPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
 import LikdTowars from "./pages/LikeTowars/LikedTowars";
 import ContactUs from "./pages/ContactUs/ContactUs";
@@ -41,6 +42,7 @@ function AppContent(){
           {cartOpen && <Cart setCartOPen={setCartOPen} />}
 
           <Routes>
+            <Route path="/CartPage" element={<CartPage/>}/>
             <Route path="/ContactUs" element={<ContactUs/>}/>
             <Route path="/LikdTowars" element={<LikdTowars />}/>
             <Route path="/ItemPage/:id" element={<ItemPage />}/>

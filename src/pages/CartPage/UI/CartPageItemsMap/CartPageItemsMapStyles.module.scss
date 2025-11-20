@@ -1,0 +1,286 @@
+    .Cart_Elements{
+        width: 100%;
+        height: 482px;
+        overflow: auto;
+        
+        /* === СКРОЛЛБАР === */
+        &::-webkit-scrollbar {
+                width: 6px;    /* ширина скролла */
+        }
+
+        &::-webkit-scrollbar-track {
+                background: #E6E8EC;   /* цвет фона трека */
+                border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+                background: #3B3B3B;   /* цвет бегунка */
+                border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+                background: #000000;   /* цвет при наведении */
+        }
+
+        .Cart_Item{
+            width: 100%;
+            height: 144px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #E8ECEF;               
+                
+
+                .Cart_Towars_Info{
+                    width: 316px;
+                    height: 96px;
+
+                    display: flex;
+                    gap: 16px;
+                    
+                    img{
+                        width: 90px;
+                        height: 100%;
+                    }   
+
+                    div{
+                        
+                        height: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        h1{
+                            font-weight: 600;
+                            font-style: Semi Bold;
+                            font-size: 14px;                            
+                            line-height: 22px;
+                            letter-spacing: 0px;
+                            color: #141718;
+                        }
+
+                        h2{
+                            font-weight: 400;
+                            font-style: Regular;
+                            font-size: 12px;
+                            line-height: 20px;
+                            letter-spacing: 0px;
+                            color: #6C7275;
+                        }
+
+                        .Cart_Item_Counter{
+                            display: none;
+                        }
+
+                        .Cart_Item_Closed_Button{
+                            width:183px;
+                            height: 24px;
+                            
+                            display: flex;
+                            gap: 20px;
+
+                            position: relative;
+                            cursor: pointer;
+
+                            &:hover{
+                                opacity: .7;
+                            }
+                            &::before, &::after{
+                                content: '';
+                                position: absolute;
+
+                                width: 15px;
+                                height: 2px;
+                                background: #6C7275;
+                                top: 45%;
+                                left: 0;
+                            }
+
+                            &::before{
+                                transform: rotate(45deg);
+                            }
+                            &::after{
+                                transform: rotate(-45deg);
+                            }
+
+                            h2{
+                                margin-left: 20px;
+                                font-weight: 600;
+                                font-style: Semi Bold;
+                                font-size: 14px;
+                                line-height: 22px;
+                                letter-spacing: 0px;
+                                color: #6C7275;
+                            }                            
+                        }
+                    }
+                }
+             
+                .Cart_Item_Info_Container{
+                    width: 313px;
+                    height: 32px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    .Cart_Item_Counter{
+                        width: 80px;
+                        height: 32px;
+
+                        border: 1px solid #6C7275;
+                        border-radius: 4px;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+
+                        span{
+                            cursor: pointer;
+                        }
+                    }
+
+                    .Cart_Item_price{
+                        margin-left: -20px;
+
+                        font-weight: 400;
+                        font-style: Regular;
+                        font-size: 18px;
+                        line-height: 30px;
+                        letter-spacing: 0px;
+                        text-align: right;
+                    }
+                    
+                    .Cart_Item_Full_price{
+                        
+                        font-weight: 600;
+                        font-style: Semi Bold;
+                        font-size: 18px;
+                        line-height: 30px;
+                        letter-spacing: 0px;
+                        text-align: right;
+                    }
+                } 
+        }           
+    }
+
+@media (max-width: 450px) {
+    .Cart_Elements{
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        
+        .Cart_Item{
+            width: 100%;
+            height: 144px;
+          
+            align-items: start;
+            padding: 24px 0;
+            
+            .Cart_Towars_Info{
+                width: 100%;
+                height: 96px;
+
+                display: flex;
+                gap: 16px;
+                    
+                img{
+                    width: 90px;
+                    height: 100%;
+                }   
+
+                    div{                        
+                        height: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                       
+
+                        .Cart_Item_Counter{
+                            width: 80px;
+                            height: 32px;
+
+                            border: 1px solid #6C7275;
+                            border-radius: 4px;
+
+                            display: flex;
+                            align-items: center;
+                            flex-direction: row;
+                            justify-content: center;
+
+                            gap: 12px;
+
+                            font-size: 15px;
+
+                            span{
+                                cursor: pointer;
+                            }
+                        }
+
+                        .Cart_Item_Closed_Button{
+                            display: none;
+                        }
+                    }
+            }
+             
+            .Cart_Item_Info_Container{
+                width: auto;
+                height: 54px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                
+
+                    
+                    .Cart_Item_Counter{
+                        display: none;
+                    }
+
+                    .Cart_Item_price{
+                        display: none;
+                    }
+                    
+                    .Cart_Item_Full_price{                       
+                        font-weight: 600;
+                        font-style: Semi Bold;
+                        font-size: 14px;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+                        text-align: right;
+
+                    }
+                    
+                    .Cart_Item_Remove{
+                        width:24px;
+                        height: 24px;
+                        position: relative;
+
+                        &::before, &::after{
+                            width: 20px;
+                            height: 2px;
+                            
+                            background: #6C7275;
+                            border-radius: 1px ;
+
+                            position: absolute;
+                            left: 1px;
+                            top: 11px;
+                            content: '';
+                        }
+                        &::before{
+                            transform: rotate(45deg);
+                        }
+                        &::after{
+                            transform: rotate(-45deg);
+                        }
+                    }
+            } 
+        }     
+    }
+}
