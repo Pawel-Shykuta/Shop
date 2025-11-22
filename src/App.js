@@ -18,6 +18,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
 import LikdTowars from "./pages/LikeTowars/LikedTowars";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Emitter from "./utils/eventEmitter";
 
 
 function AppContent(){
@@ -40,7 +41,7 @@ function AppContent(){
       <main>
         {!hideLocation && <Header setCartOPen={setCartOPen}/>}
           {cartOpen && <Cart setCartOPen={setCartOPen} />}
-
+          <Emitter/>
           <Routes>
             <Route path="/CartPage" element={<CartPage/>}/>
             <Route path="/ContactUs" element={<ContactUs/>}/>

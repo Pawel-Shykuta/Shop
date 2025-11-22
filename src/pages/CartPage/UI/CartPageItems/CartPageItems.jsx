@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from '../../../../components/UI/Button/Button'
 import { useGlobal } from '../../../../utils/GlobalContext'
 
@@ -8,16 +8,65 @@ import Styles from './CartPageItemsStyle.module.scss'
 import CartPageItemsMap from '../CartPageItemsMap/CartPageItemsMap'
 import CartPageItemsRadioButtons from '../CartPageItemsRadioButtons/CartPageItemsRadioButtons'
 import Input from '../../../../components/UI/Input/Input'
-import { LuTicketPercent } from "react-icons/lu";const CartPageItems = ({setActive}) =>{
+import { LuTicketPercent } from "react-icons/lu";
+
+
+
+const CartPageItems = ({setActive, setUserChoosing, promoIsAktive, setPromoIsAktive}) =>{
 
     const {cartItems} = useGlobal()
     const [selectedShipping, setSelectedShipping] = useState("free");
+    const [promodoce, setPromocode] = useState('')
+
+    const {CorrectPromocode} = useGlobal()    
 
 
-    
     const sumTotal = cartItems.reduce((acc, el) => acc + el.price * el.quantity, 0)
     const shippingCost = selectedShipping === 'express' ? 15 : selectedShipping === 'pickUp' ? sumTotal * 0.21 : 0
-    const Total = Math.ceil(sumTotal + shippingCost)
+    const [total, setTotal] = useState(Math.ceil(sumTotal + shippingCost))
+
+
+
+    const CheckPromocode = () => {
+        if (promodoce.toLowerCase() === CorrectPromocode.toLowerCase()) {
+            if (promoIsAktive) {
+                alert('Promocode already activated');
+                return;
+            }
+
+            setPromoIsAktive(true);
+            sessionStorage.setItem('promoIsAktive', 'true')
+        } else {
+            alert('Promocode not correct');
+        }
+
+        setPromocode('');
+    };
+
+
+    useEffect(() => {
+        let newTotal = Math.ceil(sumTotal + shippingCost);
+
+        if (promoIsAktive) {
+            newTotal = Math.ceil(newTotal * 0.85); // применяем скидку один раз
+        }
+        setTotal(newTotal);
+        
+        setUserChoosing({  
+            sumTotal: sumTotal,
+            total: newTotal,
+            hipping: selectedShipping,
+            promodoce:promoIsAktive,
+        })
+
+    }, [sumTotal, shippingCost, promoIsAktive]);
+
+    useEffect(() =>{
+        setPromoIsAktive(sessionStorage.getItem('promoIsAktive'))
+    },[])
+
+
+
 
     return(
         <section className={Styles.Cart_Page_Items_Container}>
@@ -41,8 +90,8 @@ import { LuTicketPercent } from "react-icons/lu";const CartPageItems = ({setActi
                 
                 <div className={Styles.Cuppon_Input_Container}>
                     <LuTicketPercent fontSize={24}/>
-                    <Input placeholder='Coupon Code' className={Styles.Input}/>
-                    <h1>Apply</h1>
+                    <Input placeholder='Coupon Code' className={Styles.Input} value={promodoce} onChange={(e) => setPromocode(e.target.value)} />
+                    <h1 onClick={CheckPromocode}>Apply</h1>
                 </div>
            </div>
         
@@ -60,7 +109,7 @@ import { LuTicketPercent } from "react-icons/lu";const CartPageItems = ({setActi
 
                     <div className={Styles.CartPageItems_Price_Total}>
                         <h1>Total</h1>
-                        <h2>${Total}.00</h2>
+                        <h2>${total}.00</h2>
                     </div>
                 </div>
                 

@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import Styles from "./ProductLoopTimerStyle.module.scss";
 
 const ProductLoopTimer = () => {
-    const offer = "22.11.2025 12:00";
+    const offer = "26.11.2025 12:00";
+
+    
 
     const [time, setTime] = useState(getTimerLeft(offer));
     const [isOffer, setIsOffer] = useState(true);

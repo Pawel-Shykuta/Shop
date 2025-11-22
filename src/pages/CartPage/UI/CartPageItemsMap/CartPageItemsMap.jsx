@@ -1,4 +1,5 @@
 
+import emitter from '../../../../utils/eventBus'
 import { useGlobal } from '../../../../utils/GlobalContext'
 import Styles from './CartPageItemsMapStyles.module.scss'
 
@@ -6,14 +7,6 @@ import Styles from './CartPageItemsMapStyles.module.scss'
 const CartPageItemsMap = () =>{
 
     const {cartItems, setCartItems} = useGlobal()
-
-    const changeCount = (num, id) =>{
-        setCartItems(prev =>{
-            return prev.map(el => {
-                return el.id === id ? {...el, quantity: el.quantity + num} : el
-            }).filter(el => el.quantity > 0)
-        })
-    } 
 
     return(
        <div className={Styles.Cart_Elements}>        
@@ -29,9 +22,9 @@ const CartPageItemsMap = () =>{
                                 <h2>Color: Balck</h2>
                                    
                                 <div className={Styles.Cart_Item_Counter}> 
-                                    <span onClick={() => changeCount(-1, el.id)}>-</span>  
+                                    <span onClick={() => emitter.emit('cart:minus', el.id)}>-</span>  
                                         {el.quantity} 
-                                    <span onClick={() => changeCount(1, el.id)}>+</span> 
+                                    <span onClick={() => emitter.emit('cart:plus', el.id)}>+</span> 
                                 </div>
 
                                 <div 
@@ -50,9 +43,9 @@ const CartPageItemsMap = () =>{
               
        
                          <div className={Styles.Cart_Item_Counter}> 
-                            <span onClick={() => changeCount(-1, el.id)}>-</span>  
+                            <span onClick={() => emitter.emit('cart:minus', el.id)}>-</span>  
                                 {el.quantity} 
-                            <span onClick={() => changeCount(1, el.id)}>+</span> 
+                            <span onClick={() => emitter.emit('cart:plus', el.id)}>+</span> 
                         </div>
        
                         <div className={Styles.Cart_Item_price}>
@@ -63,8 +56,7 @@ const CartPageItemsMap = () =>{
                             ${el.price * el.quantity}
                         </div>
 
-                        <div className={Styles.Cart_Item_Remove}>
-
+                        <div className={Styles.Cart_Item_Remove} onClick={() => setCartItems(prev => prev.filter(item => item.id !== el.id))}>
                         </div>
                     </div>       
                                                        

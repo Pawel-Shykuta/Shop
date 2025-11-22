@@ -29,7 +29,17 @@
         .Active{
             opacity: 1;
             border-bottom: 2px solid black;
+        }
 
+        .Compleated{
+            border-bottom: 2px solid #38CB89;
+            opacity: 1;
+            color: #38CB89;
+
+            span{
+                background-color: #38CB89;
+                color: white;
+            }
         }
 
         h2{

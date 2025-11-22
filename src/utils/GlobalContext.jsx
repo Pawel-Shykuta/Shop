@@ -8,6 +8,7 @@ const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(LoadCart());
   const [likedProducts, setLikedProducts] = useState(LoadLiced())
+  const [CorrectPromocode, setCorrectPromocode] = useState('Aloha')
 
 const data = useMemo(() => [
     // 1. Lampa Classic
@@ -540,7 +541,7 @@ const data = useMemo(() => [
 ], []);
 
   return(
-    <GlobalContext.Provider value={{cartItems, setCartItems, data, likedProducts, setLikedProducts}}>
+    <GlobalContext.Provider value={{cartItems, setCartItems, data, likedProducts, setLikedProducts, CorrectPromocode, setCorrectPromocode}}>
         {children}
     </GlobalContext.Provider>
   )

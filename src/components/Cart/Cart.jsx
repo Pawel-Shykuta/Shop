@@ -3,20 +3,12 @@ import Styles from './CartStyle.module.scss'
 import Button from '../UI/Button/Button'
 import { useGlobal } from '../../utils/GlobalContext'
 import { useNavigate } from 'react-router-dom'
+import emitter from '../../utils/eventBus'
 
 
 const Cart = ({setCartOPen}) =>{
     const navigate = useNavigate()
     const {cartItems, setCartItems} = useGlobal()
-
-    
-    const changeCount = (num, id) =>{
-        setCartItems(prev =>{
-            return prev.map(el => {
-                return el.id === id ? {...el, quantity: el.quantity + num} : el
-            }).filter(el => el.quantity > 0)
-        })
-    } 
 
     return(
         <section className={Styles.Cart_Wrapper} onClick={() => setCartOPen(false)}>
@@ -39,9 +31,9 @@ const Cart = ({setCartOPen}) =>{
                                     <h1>{el.name}</h1>
                                     <h2>Balck</h2>
                                     <div> 
-                                        <span onClick={() => changeCount(-1, el.id)}>-</span>  
+                                        <span onClick={() => emitter.emit('cart:minus', el.id)}>-</span>  
                                         {el.quantity} 
-                                        <span onClick={() => changeCount(1, el.id)}>+</span> 
+                                        <span onClick={() => emitter.emit('cart:plus', el.id)}>+</span> 
                                     </div>
                                 </div>
 

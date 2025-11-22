@@ -6,6 +6,8 @@ import Styles from './PageLoyautStyle.module.scss'
 
 const PageLoyaut = ({item}) => {
 
+    
+
     return(
         <div className={Styles.Item_Page_Loyaut_Container}>
             <div className={Styles.Item_Page_Loyaut}>

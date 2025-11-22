@@ -1,6 +1,6 @@
 
 
-const Input = ({ label, type = 'text', value, name, placeholder, onChange, className , style, disabled}) => {
+const Input = ({error, label, type = 'text', value, name, placeholder, onChange, className , style, disabled ,checked ,required }) => {
   return (
     <div className={className}>
       {label && <label>{label}</label>}
@@ -12,6 +12,9 @@ const Input = ({ label, type = 'text', value, name, placeholder, onChange, class
         onChange={onChange}
         style={style}
         disabled={disabled}
+        checked={checked}
+        className={error ? 'error':''}
+        required={required }
       />
     </div>
   );
