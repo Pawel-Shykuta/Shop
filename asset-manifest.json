@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shop/static/css/main.4cfeb114.css",
-    "main.js": "/Shop/static/js/main.c3ad3bae.js",
+    "main.css": "/Shop/static/css/main.c3239294.css",
+    "main.js": "/Shop/static/js/main.e30152b0.js",
     "static/media/poppins-devanagari-400-normal.woff": "/Shop/static/media/poppins-devanagari-400-normal.421fe9869ff4b58e2d7b.woff",
     "static/media/poppins-devanagari-700-normal.woff": "/Shop/static/media/poppins-devanagari-700-normal.de46590351f7df77172f.woff",
     "static/media/poppins-devanagari-400-normal.woff2": "/Shop/static/media/poppins-devanagari-400-normal.d2ee5e6ea17bffe3bf58.woff2",
@@ -15,11 +15,11 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/Shop/static/media/poppins-latin-ext-400-normal.d7c074a9c34fe9785f69.woff2",
     "static/media/poppins-latin-ext-700-normal.woff2": "/Shop/static/media/poppins-latin-ext-700-normal.51cc1e159ae5f0b8ec5c.woff2",
     "index.html": "/Shop/index.html",
-    "main.4cfeb114.css.map": "/Shop/static/css/main.4cfeb114.css.map",
-    "main.c3ad3bae.js.map": "/Shop/static/js/main.c3ad3bae.js.map"
+    "main.c3239294.css.map": "/Shop/static/css/main.c3239294.css.map",
+    "main.e30152b0.js.map": "/Shop/static/js/main.e30152b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4cfeb114.css",
-    "static/js/main.c3ad3bae.js"
+    "static/css/main.c3239294.css",
+    "static/js/main.e30152b0.js"
   ]
 }
